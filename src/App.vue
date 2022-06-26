@@ -16,7 +16,7 @@ const wh = computed(
     `${
       (window.innerWidth < window.innerHeight
         ? window.innerWidth
-        : window.innerHeight) - 100
+        : window.innerHeight) - 200
     }px`
 );
 </script>
@@ -24,7 +24,12 @@ const wh = computed(
 <template>
   <div class="content">
     <h1>Four by Four</h1>
-    <button class="big-start" v-if="!started" @click="prepareSound">Start</button>
+    <button class="big-start" v-if="!started" @click="prepareSound">
+      Start
+    </button>
+    <button class="replay" v-if="started" @click="started = false">
+      Restart
+    </button>
     <GridBoard :size="s" :wh="wh" v-if="started" />
   </div>
 </template>
@@ -61,5 +66,9 @@ button:active {
   width: v-bind(wh);
   height: v-bind(wh);
   font-size: xx-large;
+}
+
+.replay {
+  padding: 2em;
 }
 </style>
