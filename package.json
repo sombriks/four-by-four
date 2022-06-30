@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "simple-steps-js": "^0.1.1",
     "tone": "^14.7.77",
     "vue": "^3.2.25"
   },

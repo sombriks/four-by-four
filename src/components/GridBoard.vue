@@ -1,5 +1,6 @@
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted, onBeforeUnmount } from "vue";
+import { Steps } from "simple-steps-js";
 import ColorSquare from "./ColorSquare.vue";
 
 const props = defineProps(["size", "wh"]);
@@ -27,6 +28,19 @@ const proportions = computed(() => {
   while (i--) ret += `${pct}% `;
   return ret;
 });
+
+const steps = new Steps({
+  replay: true,
+  queue: [() => console.log("tone!")],
+});
+
+onMounted(() => {
+  steps.start();
+});
+
+onBeforeUnmount(() => {
+  steps.stop();
+})
 </script>
 
 <template>
