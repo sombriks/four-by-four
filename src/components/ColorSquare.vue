@@ -5,7 +5,7 @@ const props = defineProps(["note"]);
 const synth = new Tone.Synth().toDestination();
 
 const makeSound = () => {
-  synth.triggerAttackRelease(props.note,"8n");
+  synth.triggerAttackRelease(props.note, "8n");
 };
 </script>
 
@@ -13,5 +13,4 @@ const makeSound = () => {
   <button @click="makeSound"></button>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

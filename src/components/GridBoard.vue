@@ -40,7 +40,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   steps.stop();
-})
+});
 </script>
 
 <template>
